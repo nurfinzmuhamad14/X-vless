@@ -17,7 +17,7 @@ cat > /xray.json <<EOF
       },
       "streamSettings": {
         "network": "ws",
-        "security": "tls",
+        "security": "none",
         "wsSettings": {
           "path": "/ws"
         }
