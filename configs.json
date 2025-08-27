@@ -1,0 +1,39 @@
+{
+  "inbounds": [{
+    "port": 8080,
+    "protocol": "vless",
+    "settings": {
+      "vnext": [
+          {
+            "address": "xx.com",
+            "port": 443,
+            "users": [
+              {
+                "id": "", //填写你的 UUID
+                "encryption": "none"
+              }
+            ]
+      "udp": true,
+      "clients": [{
+        "id": "gba1111-hmbb-5ccc-9ddd-eeeeffff0847",
+        "flow": "none"
+      }],
+      "decryption": "none"
+    },
+    "streamSettings": {
+      "network": "ws",
+      "security": "tls",
+      "wsSettings": {
+        "path": "/vless"
+      }
+    },
+    "tlsSettings": {
+          "allowInsecure": false,
+          "serverName": "sni.com"
+      }
+  }],
+  "outbounds": [{
+    "protocol": "freedom",
+    "settings": {}
+  }]
+}
