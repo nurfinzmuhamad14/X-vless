@@ -1,9 +1,6 @@
 #!/bin/bash
 cat > /xray.json <<EOF
 {
-  "log": {
-    "loglevel": "warning"
-  },
   "inbounds": [
     {
       "port": 443,
@@ -12,7 +9,8 @@ cat > /xray.json <<EOF
         "clients": [
           {
             "id": "550e8400-e29b-41d4-a716-446655440000",
-            "level": 0
+            "level": 0,
+            "email": "mnrdnn@railway.com"
           }
         ],
         "decryption": "none"
@@ -21,17 +19,15 @@ cat > /xray.json <<EOF
         "network": "ws",
         "security": "tls",
         "wsSettings": {
-          "path": "/vless",
-          "headers": {
-            "Host": "x-vless-freemium.up.railway.app"
-          }
+          "path": "/ws"
         }
       }
     }
   ],
   "outbounds": [
     {
-      "protocol": "freedom"
+      "protocol": "freedom",
+      "settings": {}
     }
   ]
 }
