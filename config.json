@@ -1,39 +1,42 @@
 {
-  "inbounds": [{
-    "port": 8080,
-    "protocol": "vless",
-    "settings": {
-      "vnext": [
-          {
-            "address": "xx.com",
-            "port": 443,
-            "users": [
-              {
-                "id": "",
-                "encryption": "none"
-              }
-            ]
-      "udp": true,
-      "clients": [{
-        "id": "gba1111-hmbb-5ccc-9ddd-eeeeffff0847",
-        "flow": "none"
-      }],
-      "decryption": "none"
-    },
-    "streamSettings": {
-      "network": "ws",
-      "security": "tls",
-      "wsSettings": {
-        "path": "/vless"
-      }
-    },
-    "tlsSettings": {
-          "allowInsecure": false,
-          "serverName": "sni.com"
-      }
-  }],
-  "outbounds": [{
-    "protocol": "freedom",
-    "settings": {}
-  }]
+    "inbounds": [
+        {
+            "port": 1080,
+            "listen": "127.0.0.1",
+            "protocol": "socks",
+            "settings": {
+                "udp": true
+            }
+        }
+    ],
+    "outbounds": [
+        {
+            "protocol": "vless",
+            "settings": {
+                "vnext": [
+                    {
+                        "address": "example.com", // 换成你的域名或服务器 IP（发起请求时无需解析域名了）
+                        "port": 443,
+                        "users": [
+                            {
+                                "id": "550e8400-e29b-41d4-a716-446655440000", // 填写你的 UUID
+                                "encryption": "none",
+                                "level": 0
+                            }
+                        ]
+                    }
+                ]
+            },
+            "streamSettings": {
+                "network": "ws",
+                "security": "tls",
+                "tlsSettings": {
+                    "serverName": "example.com" // 换成你的域名
+                },
+                "wsSettings": {
+                    "path": "/freemium" // 必须换成自定义的 PATH，需要和服务端的一致
+                }
+            }
+        }
+    ]
 }
