@@ -1,9 +1,7 @@
 #!/bin/bash
 
 UUID_FILE=/uuid.txt
-if [ ! -f "$UUID_FILE" ]; then
-  uuidgen > $UUID_FILE
-fi
+echo "550e8400-e29b-41d4-a716-446655440000" > $UUID_FILE
 UUID=$(cat $UUID_FILE)
 
 cat > /xray.json <<EOF
