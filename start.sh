@@ -12,7 +12,7 @@ cat > /xray.json <<EOF
         "clients": [
           {
             "id": "550e8400-e29b-41d4-a716-446655440000",
-            "level": 0,
+            "level": 0
           }
         ],
         "decryption": "none"
